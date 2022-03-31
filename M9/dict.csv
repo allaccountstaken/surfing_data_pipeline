@@ -1,0 +1,29 @@
+Column name,Description
+person_id,Numeric: A unique id that anonymizes individuals by replacing the name and date of birth in the original data
+HearingDate,Datetime: Date of court hearing in YYYY-MM-DD format
+CodeSection,String: The section of the Virginia criminal code that the person is charged with violating
+codesection,Categorical: is the code section one of the ones to be speciallly treated in the new expungement law
+ChargeType,String: Felony or Misdemeanor or rare alternative types of charges
+chargetype,"Categorical: Felony or Misdemeanor, rare alternative types removed"
+Class,String: Type of felony or misdemeanor
+DispositionCode,String: Outcome of the case
+disposition,"Categorical: Outcome of the case recategorized to Dismissed, Conviction, Deferred Dismissal"
+Plea,"String: Defendant's plea prior to the court hearing, if applicable"
+Race,String: Defendant's race as typed into the data by a clerk of court
+Sex,Categorical: Defendant's sex as typed into the data by a clerk of court
+fips,Numeric: Unique ID for the specific district or circuit court where the case was heard
+convictions,Binary: are there prior convictions on the person's record
+arrests,Binary: are there prior arrests on the person's record
+felony10,Binary: has the person been convicted of a felony within the last 10 years prior to the disposition date
+sevenyear,Binary: did the person get convicted of anything in the 7 years after the disposition date?
+tenyear,Binary: did the person get convicted of anything in the 10 years after the disposition date?
+within7,Binary: is the disposition date less than 7 years from the endpoint in time coverage in the data?
+within10,Binary: is the disposition date less than 10 years from the endpoint in time coverage in the data?
+class1_2,Binary: has the person ever been convicted of a class 1 or 2 felony?
+class3_4,Binary: has the person ever been convicted of a class 3 or 4 felony?
+expungable,"Categorical: can this record be sealed automatically, sealed by petition, or sealed after an ongoing wait period, or is the record ineligible for sealing?"
+old_expungable,Categorical: expungable under a deprecated coding scheme
+expungable_no_lifetimelimit,Categorical: expungable without considering the lifetime limit on record sealing events
+reason,String: an attempt to describe the reasons for the expungability decision
+sameday,Binary: does the sameday restriction apply?
+lifetime,Binary: does the lifetime limit apply?
